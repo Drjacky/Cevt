@@ -10,15 +10,17 @@ import ir.hosseinabbasi.cevt.data.network.IApiService
 import ir.hosseinabbasi.cevt.di.module.ApplicationModule
 import ir.hosseinabbasi.cevt.di.module.DataModule
 import ir.hosseinabbasi.cevt.di.module.NetModule
+import ir.hosseinabbasi.cevt.di.module.UtilsModule
 import ir.hosseinabbasi.cevt.di.qualifier.ApplicationContext
+import ir.hosseinabbasi.cevt.utils.rx.ThreadTransformer
 import javax.inject.Singleton
 
 /**
  * Created by Dr.jacky on 7/9/2018.
  */
 @Singleton
-@Component(modules = arrayOf(ApplicationModule::class, DataModule::class, NetModule::class))
-interface ApplicationComponent : DataComponent, NetComponent {
+@Component(modules = arrayOf(ApplicationModule::class, DataModule::class, NetModule::class, UtilsModule::class))
+interface ApplicationComponent : DataComponent, NetComponent, UtilsComponent {
 
     fun inject(app: MyApplication)
 
@@ -32,5 +34,7 @@ interface ApplicationComponent : DataComponent, NetComponent {
     override fun exposeRealmManager(): RealmManager
 
     override fun exposeIApiService(): IApiService
+
+    override fun exposeThreadTransformer(): ThreadTransformer
 
 }
