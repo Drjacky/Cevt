@@ -27,7 +27,8 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
-            buildConfigField("String", "BASE_URL", "\"https://api.openweathermap.org/\"")
+            buildConfigField("String", "BASE_URL", "\"https://api.openweathermap.org/data/2.5/\"")
+            buildConfigField("String", "API_KEY", "\"af73216b9b8128713394e2043d752bb3\"")
         }
         debug {
             minifyEnabled false
@@ -36,7 +37,8 @@ android {
             applicationIdSuffix ".debug"
             versionNameSuffix "-DEBUG"
 
-            buildConfigField("String", "BASE_URL", "\"https://api.openweathermap.org/\"")
+            buildConfigField("String", "BASE_URL", "\"https://api.openweathermap.org/data/2.5/\"")
+            buildConfigField("String", "API_KEY", "\"af73216b9b8128713394e2043d752bb3\"")
             signingConfig android.signingConfigs.debug
         }
         compileOptions {
