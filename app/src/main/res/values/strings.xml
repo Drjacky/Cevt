@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cevt</string>
+    <string name="error_unknown">Error!</string>
 </resources>
