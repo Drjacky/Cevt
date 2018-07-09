@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.res.Resources
 import dagger.Component
+import ir.hosseinabbasi.cevt.MyApplication
 import ir.hosseinabbasi.cevt.data.db.RealmManager
 import ir.hosseinabbasi.cevt.data.network.IApiService
 import ir.hosseinabbasi.cevt.di.module.ApplicationModule
@@ -18,6 +19,8 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = arrayOf(ApplicationModule::class, DataModule::class, NetModule::class))
 interface ApplicationComponent : DataComponent, NetComponent {
+
+    fun inject(app: MyApplication)
 
     @ApplicationContext
     fun exposeContext(): Context
