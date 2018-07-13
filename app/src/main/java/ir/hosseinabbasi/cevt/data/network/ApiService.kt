@@ -13,6 +13,6 @@ constructor(retrofit: Retrofit) : IApiService{
     private val mRetrofit = retrofit
 
     override fun getWeather(params: Map<String, String>) {
-        mRetrofit.create(IApiService::class.java).getWeather(params)
+        mRetrofit.create(INetworkApi::class.java).getWeather(params)
     }
 }
