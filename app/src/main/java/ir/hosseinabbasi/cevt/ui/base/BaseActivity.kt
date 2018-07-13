@@ -7,8 +7,6 @@ import android.support.design.widget.Snackbar
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.view.Window
-import android.view.WindowManager
 import android.widget.TextView
 import butterknife.Unbinder
 import ir.hosseinabbasi.cevt.MyApplication
@@ -35,10 +33,6 @@ abstract class BaseActivity : AppCompatActivity(), IBaseView, BaseFragment.Callb
     private var mUnBinder: Unbinder? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE)
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        actionBar.setDisplayShowTitleEnabled(false)
         supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         activityComponent = DaggerActivityComponent.builder()

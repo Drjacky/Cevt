@@ -14,6 +14,7 @@ android {
     }
     compileSdkVersion 28
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         applicationId "ir.hosseinabbasi.cevt"
         minSdkVersion 14
         targetSdkVersion 28
