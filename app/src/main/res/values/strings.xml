@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Cevt</string>
     <string name="error_unknown">Error!</string>
+    <string name="humidity">Humidity: %1$s</string>
+    <string name="pressure">Pressure: %1$s</string>
+    <string name="temperature">%1$s\u00B0</string>
+    <string name="icon_content_description">Weather Description</string>
 </resources>

@@ -30,6 +30,7 @@ android {
 
             buildConfigField("String", "BASE_URL", "\"https://api.openweathermap.org/data/2.5/\"")
             buildConfigField("String", "API_KEY", "\"af73216b9b8128713394e2043d752bb3\"")
+            buildConfigField("String", "IMAGE_URL", "\"https://openweathermap.org/img/w/\"")
         }
         debug {
             minifyEnabled false
@@ -40,6 +41,7 @@ android {
 
             buildConfigField("String", "BASE_URL", "\"https://api.openweathermap.org/data/2.5/\"")
             buildConfigField("String", "API_KEY", "\"af73216b9b8128713394e2043d752bb3\"")
+            buildConfigField("String", "IMAGE_URL", "\"https://openweathermap.org/img/w/\"")
             signingConfig android.signingConfigs.debug
         }
         compileOptions {

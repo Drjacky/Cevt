@@ -6,6 +6,8 @@
 
         <import type="android.view.View" />
 
+        <import type="ir.hosseinabbasi.cevt.utils.CommonUtils" />
+
         <variable
             name="WeatherResponseModel"
             type="ir.hosseinabbasi.cevt.data.db.model.WeatherResponse" />
@@ -18,6 +20,7 @@
         android:background="@color/colorPrimary">
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
@@ -25,6 +28,98 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_bg" />
+
+        <TextView
+            android:id="@+id/fragment_weather_txtCityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{WeatherResponseModel.name}"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fragment_weather_txtDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{CommonUtils.timestampToDate(WeatherResponseModel.dt)}"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_weather_txtCityName" />
+
+        <ImageView
+            android:id="@+id/fragment_weather_imvIcon"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:contentDescription="@string/icon_content_description"
+            android:padding="8dp"
+            app:imageUrl="@{CommonUtils.iconIdToUrl(WeatherResponseModel.weather.get(0).icon)}"
+            app:layout_constraintEnd_toEndOf="@+id/fragment_weather_txtDateTime"
+            app:layout_constraintStart_toStartOf="@+id/fragment_weather_txtDateTime"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_weather_txtDateTime" />
+
+        <TextView
+            android:id="@+id/fragment_weather_txtTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{String.format(@string/temperature, WeatherResponseModel.main.temp)}"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white"
+            android:textSize="45sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/fragment_weather_txtPressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{String.format(@string/pressure, WeatherResponseModel.main.pressure)}"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_weather_txtTemperature"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/fragment_weather_txtHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{String.format(@string/humidity, WeatherResponseModel.main.humidity)}"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_weather_txtPressure"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/fragment_weather_txtDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{WeatherResponseModel.weather.get(0).description}"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_weather_txtHumidity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7" />
 
     </android.support.constraint.ConstraintLayout>
 
