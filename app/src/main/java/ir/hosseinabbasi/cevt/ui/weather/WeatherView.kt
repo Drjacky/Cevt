@@ -67,7 +67,6 @@ class WeatherView : BaseFragment(), IWeatherView {
     }
 
     override fun loadWeather(weather: WeatherResponse) {
-        //val url: String = ApiEndPoint.IMAGE_ENDPOINT + weather.weather?.get(0)?.icon + Constants.ICON_EXTENSION_APPID
         val weatherBinding =
                 DataBindingUtil.setContentView<ViewDataBinding>(mContext as Activity, R.layout.fragment_weather)
         weatherBinding.setVariable(BR.WeatherResponseModel, weather)
