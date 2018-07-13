@@ -1,5 +1,3 @@
-# CEVT: Android Assignment
-
 This repository contains a sample app that implements MVP architecture using Dagger2, Realm, RxJava, Retrofit2, Picasso,
 ConstrainLayout, RealmFieldNamesHelper, GSON, ButterKnife, Data Binding.
 
