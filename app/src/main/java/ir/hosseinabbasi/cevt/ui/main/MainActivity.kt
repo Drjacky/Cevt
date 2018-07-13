@@ -4,6 +4,7 @@ import android.os.Bundle
 import butterknife.ButterKnife
 import ir.hosseinabbasi.cevt.R
 import ir.hosseinabbasi.cevt.ui.base.BaseActivity
+import ir.hosseinabbasi.cevt.ui.weather.WeatherView
 import javax.inject.Inject
 
 /**
@@ -29,5 +30,9 @@ class MainActivity : BaseActivity(), IMainActivityView {
     }
 
     private fun initViews() {
+        supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.activity_main_frmMain, WeatherView.getInstance(), WeatherView.TAG)
+                .commit()
     }
 }
