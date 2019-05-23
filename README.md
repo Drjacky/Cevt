@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/Drjacky/Cevt/tree/master.svg?style=svg)](https://circleci.com/gh/Drjacky/Cevt/tree/master)
+
 This repository contains a sample app that implements MVP architecture using Dagger2, Realm, RxJava, Retrofit2, Picasso,
 ConstrainLayout, RealmFieldNamesHelper, GSON, ButterKnife, Data Binding.
 
